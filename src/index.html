@@ -4,15 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- PWA · installable app metadata -->
-<link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#05070f">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="M. Ibrahim">
-<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 <title>Mohanad Ibrahim · Executive Finance Transformation Portfolio · MENA &amp; GCC 2026</title>
 <meta name="description" content="ATS-optimized Executive Finance Transformation Portfolio — Mohanad Ibrahim. Strategic Finance Business Partner · Finance Transformation Leader · Financial Governance Specialist. 8+ years across Egypt and the UAE.">
 <meta name="author" content="Mohanad Ibrahim">
@@ -3145,7 +3141,259 @@ html.light .hero-cta.ghost {
 #body-bg-video { opacity: 0.45; }
 html.light #body-bg-video { opacity: 0.35; }
 </style>
-  <link rel="stylesheet" href="css/responsive-design-pass.css" id="responsive-design-pass">
+<style id="responsive-design-pass">
+/* Portfolio responsive refinement — additive, content-preserving layer.
+   Loaded after the existing inline design system. No content or behaviour is removed. */
+:root { scroll-padding-top: 6.5rem; }
+html { scroll-padding-top: 6.5rem; }
+body { min-width: 320px; }
+img, video, canvas, svg { max-width: 100%; }
+
+.top-nav {
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  min-height: 52px;
+}
+.top-nav .brand,
+.top-nav .nav-item { flex: 0 0 auto; }
+.top-nav .nav-item:focus-visible,
+.top-nav .brand:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue-2, #80c6ff);
+  outline-offset: 3px;
+}
+
+.section {
+  padding: clamp(84px, 8vw, 120px) clamp(24px, 6.7vw, 96px);
+}
+.section > * { min-width: 0; }
+.lead { max-width: 70ch; }
+.cover-text {
+  padding: clamp(76px, 8vw, 112px) clamp(28px, 5.6vw, 80px)
+           clamp(64px, 6vw, 88px) clamp(28px, 4.5vw, 64px);
+}
+.cover-name {
+  font-size: clamp(48px, 6.2vw, 92px);
+  overflow-wrap: anywhere;
+}
+.cover-summary,
+.cover-title { max-width: 62ch; }
+.cover-contact { overflow-wrap: anywhere; }
+.cover-contact a { overflow-wrap: anywhere; }
+
+@media (max-width: 1024px) {
+  .cover { grid-template-columns: minmax(0, 1fr); }
+  .cover-art {
+    min-height: clamp(300px, 48vh, 520px);
+    padding: 76px 24px 28px;
+  }
+  .cover-art img { width: min(58vw, 340px); }
+  .cover-text {
+    padding: 48px clamp(24px, 6vw, 56px) 72px;
+  }
+  .section { padding-inline: clamp(24px, 5vw, 56px); }
+}
+
+@media (max-width: 720px) {
+  html, body { overflow-x: clip; }
+  .top-nav {
+    top: max(8px, env(safe-area-inset-top));
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 6px 8px;
+    border-radius: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .top-nav::-webkit-scrollbar { display: none; }
+  .top-nav .brand { padding-inline: 4px 8px; }
+  .top-nav .nav-item {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  .top-nav .nav-item.cta {
+    margin-left: 2px;
+    padding-inline: 13px;
+  }
+
+  .cover { min-height: 0; }
+  .cover-art {
+    min-height: 0;
+    padding: 92px 20px 24px;
+  }
+  .cover-art img {
+    width: min(64vw, 280px);
+    max-width: 280px;
+    border-radius: 20px;
+  }
+  .cover-text { padding: 32px 22px 56px; }
+  .cover-eyebrow {
+    font-size: 9px;
+    letter-spacing: .16em;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+  }
+  .cover-name {
+    font-size: clamp(44px, 12vw, 64px);
+    line-height: 1.02;
+    margin-bottom: 14px;
+  }
+  .cover-title {
+    font-size: clamp(19px, 5.4vw, 25px);
+    margin-bottom: 20px;
+  }
+  .cover-summary { font-size: 14px; margin-bottom: 22px; }
+  .cover-contact {
+    padding: 16px 17px;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .cover-targets { margin-top: 22px; gap: 7px; }
+  .cover-targets span { font-size: 10px; padding: 7px 10px; }
+
+  .section {
+    min-height: auto;
+    padding: 84px 22px 64px;
+  }
+  .sec-num { top: 20px; right: 20px; }
+  h1 { font-size: clamp(38px, 10vw, 54px); }
+  h2 { font-size: clamp(31px, 8vw, 43px); }
+  h3 { font-size: 20px; }
+  .lead { font-size: 14px; margin-bottom: 28px; }
+  .eyebrow { font-size: 9px; letter-spacing: .16em; }
+  .positioning-quote {
+    font-size: clamp(21px, 5.8vw, 27px);
+    padding: 26px 20px;
+    margin-bottom: 30px;
+  }
+  .positioning-quote::before { left: 12px; top: 8px; font-size: 54px; }
+  .positioning-pillars { gap: 14px; margin-top: 30px; }
+  .pillar, .matrix-cluster, .icon-card, .exp-block, .ach-card {
+    padding: 22px 19px;
+    border-radius: 17px;
+  }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .stat-block { padding: 22px 12px; }
+  .stat-num { font-size: clamp(32px, 9vw, 46px); }
+  .stat-label { font-size: 12px; }
+  .stat-sub { font-size: 9px; }
+  .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cards-3, .achievements-grid, .matrix-grid { grid-template-columns: minmax(0, 1fr); }
+  .back-to-top { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 390px) {
+  .section { padding-inline: 18px; }
+  .cover-text { padding-inline: 18px; }
+  .cover-name { font-size: clamp(40px, 11.5vw, 48px); }
+  .stats-grid, .cards-4 { grid-template-columns: minmax(0, 1fr); }
+  .top-nav .brand { gap: 6px; font-size: 12px; }
+  .top-nav .brand-mark { width: 28px; height: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Restore every existing navigation destination; horizontal scrolling keeps all links reachable on phones. */
+@media (max-width: 720px) {
+  .top-nav { justify-content: flex-start; }
+  .top-nav .nav-item {
+    display: inline-flex !important;
+    flex: 0 0 auto;
+  }
+}
+
+
+/* Mobile hero density: preserve every item while reducing the vertical scroll burden. */
+@media (max-width: 720px) {
+  #cover .hero-stage {
+    min-height: 0;
+    padding: 76px 16px 20px;
+    gap: 12px;
+  }
+  #cover .hero-portrait {
+    width: min(58vw, 205px);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    padding: 6px;
+  }
+  #cover .hero-portrait-inner {
+    width: 100%;
+    height: 100%;
+  }
+  #cover .hero-roles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+  #cover .hero-role {
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 7px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+  #cover .hero-kpis {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 0;
+  }
+  #cover .hero-kpi {
+    min-width: 0;
+    padding: 9px 3px;
+    text-align: center;
+  }
+  #cover .hero-kpi .v { font-size: 20px; }
+  #cover .hero-kpi .l { font-size: 8px; letter-spacing: .06em; }
+  #cover .cover-text {
+    padding: 34px 22px 52px;
+  }
+  #cover .cover-summary {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  #cover .cover-contact {
+    padding: 13px 14px;
+    font-size: 10px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 390px) {
+  #cover .hero-stage { padding-inline: 14px; }
+  #cover .hero-role { font-size: 8.5px; }
+  #cover .hero-kpi .v { font-size: 18px; }
+}
+
+</style>
 </head>
 <body>
 <!-- Skip to content (first focusable · WCAG 2.4.1 bypass block) -->
@@ -6907,15 +7155,5 @@ html.light .back-to-top:hover{ background:rgba(255,255,255,.94);border-color:rgb
 </script>
 
 <!-- PWA · register the service worker (offline app shell + installability) -->
-<script id="pwa-sw-register">
-(function () {
-  if (!('serviceWorker' in navigator)) return;
-  // Service workers require a secure context (https or localhost); skip on file://.
-  if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () { /* non-fatal */ });
-  });
-})();
-</script>
 </body>
 </html>
