@@ -175,3 +175,76 @@ button:focus-visible {
     flex: 0 0 auto;
   }
 }
+
+
+/* Mobile hero density: preserve every item while reducing the vertical scroll burden. */
+@media (max-width: 720px) {
+  #cover .hero-stage {
+    min-height: 0;
+    padding: 76px 16px 20px;
+    gap: 12px;
+  }
+  #cover .hero-portrait {
+    width: min(58vw, 205px);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    padding: 6px;
+  }
+  #cover .hero-portrait-inner {
+    width: 100%;
+    height: 100%;
+  }
+  #cover .hero-roles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+  #cover .hero-role {
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 7px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+  #cover .hero-kpis {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 0;
+  }
+  #cover .hero-kpi {
+    min-width: 0;
+    padding: 9px 3px;
+    text-align: center;
+  }
+  #cover .hero-kpi .v { font-size: 20px; }
+  #cover .hero-kpi .l { font-size: 8px; letter-spacing: .06em; }
+  #cover .cover-text {
+    padding: 34px 22px 52px;
+  }
+  #cover .cover-summary {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  #cover .cover-contact {
+    padding: 13px 14px;
+    font-size: 10px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 390px) {
+  #cover .hero-stage { padding-inline: 14px; }
+  #cover .hero-role { font-size: 8.5px; }
+  #cover .hero-kpi .v { font-size: 18px; }
+}
