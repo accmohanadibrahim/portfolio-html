@@ -167,9 +167,11 @@ button:focus-visible {
   }
 }
 
-/* Restore all existing navigation destinations; horizontal scrolling keeps them reachable on phones. */
+/* Restore every existing navigation destination; horizontal scrolling keeps all links reachable on phones. */
 @media (max-width: 720px) {
-  .top-nav .nav-item:not(.cta):not(.brand) ~ .nav-item:not(.cta) {
-    display: inline-flex;
+  .top-nav { justify-content: flex-start; }
+  .top-nav .nav-item {
+    display: inline-flex !important;
+    flex: 0 0 auto;
   }
 }
